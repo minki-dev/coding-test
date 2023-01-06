@@ -25,3 +25,10 @@ quiz	| result
 입출력 예 #2
 
 - 19 - 6 = 13 은 옳은 수식이므로 "O", 5 + 66 = 71 은 옳은 수식이므로 "O", 5 - 15 = 63 은 틀린 수식이므로 "X", 3 - 1 = 2는 옳은 수식이므로 "O" 따라서 ["O", "O", "X", "O"]를 return합니다.
+
+## 문제풀이
+```js
+function solution(quiz) {
+    return quiz.map((e) => eval(e.replace(/=/g,'==')) == 1 ? "O" : "X")
+}
+``` 
