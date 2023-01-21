@@ -37,17 +37,14 @@ function solution(quizArr) {
     return checkCorrect(quiz);
   });
 }
-
 function checkCorrect(quiz) {
   const [expression, result] = splitByEqual(quiz);
   const expResult = doOperator(expression);
   return expResult === Number(result) ? "O" : "X";
 }
-
 function splitByEqual(quiz) {
   return quiz.split(" = ");
 }
-
 function doOperator(expression) {
   return expression.indexOf(" - ") > -1
     ? doMinus(expression)
